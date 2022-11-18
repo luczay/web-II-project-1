@@ -1,0 +1,44 @@
+body, html {
+    height: 100%;
+    background-color: #3B3B3B !important;
+}
+
+header {
+    margin: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #B0903D;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    margin: 2rem auto;
+    display: flex !important;
+}
+
+main #content {
+    width: 50%;
+    height: 100%;
+    margin: 0 1%;
+    margin-right: 25%;
+    background: url("/res/img/paper.jpg");
+}
+
+#hatos {
+    position: absolute;
+    display: flex;
+    width: auto;
+    height: 50px;
+    margin-left: 15px;
+}
+
+#szerencsejatek {
+    float: right;
+    display: flex;
+    width: auto;
+    height: 50px;
+    margin-right: 15px;
+}
