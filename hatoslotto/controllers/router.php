@@ -1,4 +1,4 @@
-<?php 
+<?php
     $page = "nyitolap";
     $export = False;
 
@@ -27,13 +27,6 @@
         $target = SERVER_ROOT.'controllers/error404.php';
     }
 
-    $target = SERVER_ROOT.'controllers/'.$controllerfile.'.php';
-    if(! file_exists($target))
-    {
-        $controllerfile = "error404";
-        $target = SERVER_ROOT.'controllers/error404.php';
-    }
-
     include_once($target);
     $class = ucfirst($controllerfile).'_Controller';
     if(class_exists($class))
@@ -41,11 +34,11 @@
         $controller = new $class; 
         if ($export) 
         {
-            $controller->main($ev_start, $ev_utolso);
+            return $controller->main($ev_start, $ev_utolso);
         }
         else
         {
-            $controller->main();
+            return $controller->main();
         }
     }
     else 

@@ -18,6 +18,10 @@
 </head>
 
 <body>
+<?php
+    define('SERVER_ROOT', $_SERVER['DOCUMENT_ROOT'].'/hatoslotto/');
+    require_once(SERVER_ROOT . 'controllers/' . 'router.php');
+?>
 <header>
     <img id="hatos" src="/res/img/hatos.png" alt="Hatoslottó logo"/>
     <img id="szerencsejatek" src="/res/img/szerencsejatek.png" alt="Szerencsejáték Zrt."/>
@@ -45,4 +49,25 @@
 
     </div>
 </main>
+
+<script>
+    fetch('http://localhost?export', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/html; charset=utf-8'
+        },
+        body: {
+            'ev_start': 2000,
+            'ev_utolso': 2001
+        }
+    })
+    .then(response => response.text())
+    .then(response => {
+	    var parser = new DOMParser();
+	    var doc = parser.parseFromString(response, 'text/html');
+
+        document.getElementById('content').innerText = doc.body.innerText;
+    });
+
+</script>
 </body>

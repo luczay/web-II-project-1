@@ -24,6 +24,7 @@ main #content {
     height: 100%;
     margin: 0 1%;
     margin-right: 25%;
+    padding: 2%;
     background: url("/res/img/paper.jpg");
 }
 
