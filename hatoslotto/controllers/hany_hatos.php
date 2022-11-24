@@ -6,7 +6,7 @@
         public function main() 
         {
             $result = hat_talalatos();
-            var_dump($result);
+            json_encode($result);
         }
     }
 ?>

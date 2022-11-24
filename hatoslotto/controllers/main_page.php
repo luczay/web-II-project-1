@@ -3,8 +3,7 @@
     {
         public function main() 
         {
-        return "";
-//             include('index.html');
+            include('views/index.html');
         }
     }
 ?>

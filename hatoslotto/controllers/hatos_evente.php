@@ -3,6 +3,10 @@
 
     class Hatos_evente_Controller 
     {
-        $result = hatos_evente();
+        public function main() 
+        {
+            $result = hatos_evente();
+            json_encode($result);
+        }
     }
 ?>
