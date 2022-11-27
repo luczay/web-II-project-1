@@ -38,12 +38,12 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                    aria-expanded="false">Grafikonok</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="hatoslotto/views/hatos-evente.html">Hatos találatok</a>
-                    <a class="dropdown-item" href="hatoslotto/views/talalatok-intervallumonkent.html">Eloszlás</a>
+                    <a class="dropdown-item" href="views/hatos-evente.html">Hatos találatok</a>
+                    <a class="dropdown-item" href="views/talalatok-intervallumonkent.html">Eloszlás</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href = "/hatoslotto/models/pdf_maker.php">PDF készítés</a>
+                <a class="nav-link" href = "models/pdf_maker.php">PDF készítés</a>
             </li>
         </ul>
     </div>
