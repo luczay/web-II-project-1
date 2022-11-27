@@ -1,9 +1,9 @@
 <?php 
     require_once(SERVER_ROOT . 'tcpdf/tcpdf.php');
-    require_once(SERVER_ROOT . 'models/hat_talalatos_intervallum_query.php');
-    function make_pdf($ev_start, $ev_utolso) 
+    require_once(SERVER_ROOT . 'models/hat_talalatos_query.php');
+    function make_pdf() 
     {
-        $result = hat_talalatos_intervallum($ev_start, $ev_utolso);
+        $result = hat_talalatos();
         $html = '
                     <html>
                         <head>

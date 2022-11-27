@@ -1,24 +1,15 @@
 <?php 
-    $export = False;
+    $page = 'fo_oldal';
 
     $request = $_SERVER['QUERY_STRING'];
-    echo($request);
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         $page = $request;
-        if ($page == 'export') 
-        {
-            $export = True;
-            $ev_start = $_POST['ev_start'];
-            $ev_utolso = $_POST['ev_utolso'];
-        }
     }
-    else
+    else if ($request == 'export') 
     {
-        return "";
+        $page = $request;
     }
-
-    echo($page);
 
     $controllerfile = $page;
     $target = SERVER_ROOT.'controllers/'.$controllerfile.'.php';
@@ -35,14 +26,7 @@
     if(class_exists($class))
     { 
         $controller = new $class; 
-        if ($export) 
-        {
-            $controller->main($_POST['ev_start'], $_POST['ev_utolso']);
-        }
-        else
-        {
-            $controller->main();
-        }
+        return $controller->main();
     }
     else 
     { 

@@ -1,6 +1,6 @@
 <?php
     require(SERVER_ROOT . 'models/database.php');
-    function hat_talalatos_intervallum($ev_start, $ev_utolso) {
+    function hat_talalatos_intervallum() {
         global $db;
         $query = "
                     SELECT huzas.ev, huzas.het, nyeremeny.darab, huzott.szam
@@ -11,8 +11,6 @@
                     ORDER BY huzas.ev DESC, huzas.het DESC 
                 ";
         $statement = $db->prepare($query);
-        $statement->bindValue(':ev_start', $ev_start);
-        $statement->bindValue(':ev_utolso', $ev_utolso);
         $statement->execute();
         $results = $statement->fetchAll();
         $statement->closeCursor();

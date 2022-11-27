@@ -3,9 +3,9 @@
 
     class Export_Controller 
     {
-        public function main($ev_start, $ev_utolso) 
+        public function main() 
         {
-            make_pdf($ev_start, $ev_utolso);
+            return make_pdf();
         }
     }
 ?>
