@@ -1,8 +1,8 @@
 <?php 
-    $page = "nyitolap";
     $export = False;
 
     $request = $_SERVER['QUERY_STRING'];
+    echo($request);
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         $page = $request;
@@ -13,10 +13,12 @@
             $ev_utolso = $_POST['ev_utolso'];
         }
     }
-    else 
+    else
     {
-        $page = 'main_page';
+        return "";
     }
+
+    echo($page);
 
     $controllerfile = $page;
     $target = SERVER_ROOT.'controllers/'.$controllerfile.'.php';

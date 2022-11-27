@@ -54,7 +54,7 @@
 </main>
 
 <script>
-    fetch('http://localhost?export', {
+    fetch('/hatoslotto?hany_hatos', {
         method: 'POST',
         headers: {
             'Content-Type': 'text/html; charset=utf-8'
