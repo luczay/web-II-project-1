@@ -19,17 +19,13 @@ main {
     display: flex !important;
 }
 
-main #content::before {
-    opacity: 0.4;
-    background: url("/res/img/paper.jpg");
-}
-
 main #content {
     width: 50%;
     height: 100%;
     margin: 0 1%;
     margin-right: 25%;
     padding: 2%;
+    background: url("/res/img/paper.jpg");
 }
 
 #hatos {
