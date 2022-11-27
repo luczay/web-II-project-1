@@ -28,14 +28,14 @@
     <div class="w-25">
         <ul class="nav nav-pills flex-column align-items-center">
             <li class="nav-item">
-                <a class="nav-link active" href="hatoslotto/index.php">Főoldal</a>
+                <a class="nav-link active" href="index.php">Főoldal</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                    aria-expanded="false">Grafikonok</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="views/hatos-evente.html">Hatos találatok</a>
-                    <a class="dropdown-item" href="views/talalatok-intervallumonkent.html">Eloszlás</a>
+                    <a class="dropdown-item" href="hatos-evente.html">Hatos találatok</a>
+                    <a class="dropdown-item" href="talalatok-intervallumonkent.html">Eloszlás</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -45,7 +45,7 @@
     </div>
 
     <div id="content">
-
+        
     </div>
 </main>
 
@@ -62,31 +62,20 @@
     })
     .then(response => response.json())
     .then(response => {
-	    var parser = new DOMParser();
-	    var doc = parser.parseFromString(response, 'text/html');
-
-        // TODO: mivel a szerver oldalról nem jó adat jön vissza, egyelőre beégetett adatokkal dolgozunk
-        // document.getElementById('content').innerText = doc.body.innerText;
-
-        var htmlContent = 
-        '<table>' + 
-            '<tr>' +
-                '<th>Ev</th>' +
-                '<th>Het</th>' +
-                '<th>Darab</th>' +
-                '<th>Szam</th>' +
-            '</tr>' +
-            '<tr>' +
-                '<td>Ev</td>' +
-                '<td>Het</td>' +
-                '<td>Darab</td>' +
-                '<td>Szam</td>' +
-            '</tr>' +
-        '</table>';
-
-        console.log(htmlContent);
-
-        //$('#content').append(htmlContent);
+        //console.log(response);
+        var table = $("<table></table>");
+        $(table).append("<th>Év</th>" + "<th>Hét</th>" + "<th>Hatosok darabszáma</th>" + "<th>Nyerőszám</th>");
+        for (var i = 0; i < response.length;  i++){
+            var tr = '<tr>' +
+                        '<td>' + response[i].ev + '</td>' +
+                        '<td>' + response[i].het + '</td>' +
+                        '<td>' + response[i].darab + '</td>' +
+                        '<td>' + response[i].szam + '</td>' +
+                    '</tr>';
+            table.append(tr);        
+        }
+        $('#content').append(table);
+        console.log(table.html());
     });
 
 </script>
