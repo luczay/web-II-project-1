@@ -32,7 +32,7 @@
     <div class="w-25">
         <ul class="nav nav-pills flex-column align-items-center">
             <li class="nav-item">
-                <a class="nav-link active" href="/">Főoldal</a>
+                <a class="nav-link active" href="hatoslotto/index.php">Főoldal</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
