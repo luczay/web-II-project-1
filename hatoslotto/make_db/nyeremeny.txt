@@ -1,4 +1,3 @@
-id	huzasid	talalat	darab	ertek
 1	547	7	1	10767529
 2	886	4	2873	5085
 3	323	7	3	2201682

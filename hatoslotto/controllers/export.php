@@ -3,9 +3,9 @@
 
     class Export_Controller 
     {
-        public function main() 
+        public function main($start_year, $end_year, $money) 
         {
-            return make_pdf();
+            return make_pdf($start_year, $end_year, $money);
         }
     }
 ?>

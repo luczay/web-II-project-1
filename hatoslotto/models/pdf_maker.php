@@ -1,9 +1,9 @@
 <?php 
     require_once(SERVER_ROOT . 'tcpdf/tcpdf.php');
     require_once(SERVER_ROOT . 'models/hat_talalatos_query.php');
-    function make_pdf() 
+    function make_pdf($start_year, $end_year, $money) 
     {
-        $result = hat_talalatos();
+        $result = hat_talalatos($start_year, $end_year, $money);
         $html = '
                     <html>
                         <head>
@@ -15,6 +15,7 @@
                                     <th>Het</th>
                                     <th>Darab</th>
                                     <th>Szam</th>
+                                    <th>Neremeny</th>
                                 </tr>';
 
         foreach($result as $row) 
@@ -31,6 +32,9 @@
             $html.='</td>';
             $html.='<td>';
             $html.=$row['szam'];
+            $html.='</td>';
+            $html.='<td>';
+            $html.=$row['ertek'];
             $html.='</td>';
             $html.='</tr>';
         }
@@ -49,6 +53,6 @@
         $pdf->SetFont('helvetica', '', 10);
         $pdf->AddPage();
         $pdf->writeHTML($html, true, false, true, false);
-        $pdf->Output('EZ AZ MUKSZIK', 'I');
+        $pdf->Output('Hatoslotto', 'I');
     }
 ?>

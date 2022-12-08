@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>Hatoslottó</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="/views/static/css/style.css">
+    <!--Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/views/static/js/grafikon.js"></script>
+</head>
+
+<body>
+    <h1>Hány hat találatos volt már eddig egyszerre</h1>
+<header>
+    <img id="hatos" src="/views/static/img/hatos.png" alt="Hatoslottó logo"/>
+    <img id="szerencsejatek" src="/views/static/img/szerencsejatek.png" alt="Szerencsejáték Zrt."/>
+</header>
+<main>
+    <div class="w-25">
+        <ul class="nav nav-pills flex-column align-items-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.php">Főoldal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href = "/index.php?export">PDF készítés</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</main>
+
+</body>

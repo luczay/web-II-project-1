@@ -3,7 +3,7 @@
     <title>Hatoslottó</title>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="/res/css/style.css">
+    <link rel="stylesheet" href="/views/static/css/style.css">
     <!--Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -19,9 +19,9 @@
 
 <body>
 <header>
-    <img id="hatos" src="/res/img/hatos.png" alt="Hatoslottó logo"/>
-    <img id="szerencsejatek" src="/res/img/szerencsejatek.png" alt="Szerencsejáték Zrt."/>
     <h1>Hatoslottó eddigi nyerőszámai</h1>
+    <img id="hatos" src="/views/static/img/hatos.png" alt="Hatoslottó logo"/>
+    <img id="szerencsejatek" src="/views/static/img/szerencsejatek.png" alt="Szerencsejáték Zrt."/>
 </header>
 
 <main>
@@ -30,16 +30,11 @@
             <li class="nav-item">
                 <a class="nav-link active" href="index.php">Főoldal</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                   aria-expanded="false">Grafikonok</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="hatos-evente.html">Hatos találatok</a>
-                    <a class="dropdown-item" href="talalatok-intervallumonkent.html">Eloszlás</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href = "/index.php?pdf_page">PDF készítés</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href = "/hatoslotto/index.php?export">PDF készítés</a>
+                <a class="nav-link" href = "/index.php?grafikon_page">Grafikon</a>
             </li>
         </ul>
     </div>
@@ -50,7 +45,7 @@
 </main>
 
 <script>
-    fetch('/hatoslotto/index.php?hany_hatos', {
+    fetch('/index.php?hany_hatos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json; charset=utf-8'
